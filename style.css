@@ -1,0 +1,43 @@
+body {
+    background: white;
+    font-family:sans-serif
+}
+
+/* from https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f */
+input { display: none; }
+input + label { display: inline-block }
+input ~ .tab { display: none }
+#three-gorges-tab:checked ~ .tab.three-gorges-tab-content,
+#three-gorges-tab-3d:checked ~ .tab.three-gorges-tab-3d-content,
+#three-gorges-tab-24h:checked ~ .tab.three-gorges-tab-24h-content,
+#cuntan-tab:checked ~ .tab.cuntan-tab-content,
+#cuntan-tab-3d:checked ~ .tab.cuntan-tab-3d-content,
+#cuntan-tab-24h:checked ~ .tab.cuntan-tab-24h-content,
+#hankou-tab:checked ~ .tab.hankou-tab-content,
+#hankou-tab-3d:checked ~ .tab.hankou-tab-3d-content,
+#hankou-tab-24h:checked ~ .tab.hankou-tab-24h-content,
+#yichang-tab:checked ~ .tab.yichang-tab-content,
+#yichang-tab-3d:checked ~ .tab.yichang-tab-3d-content,
+#yichang-tab-24h:checked ~ .tab.yichang-tab-24h-content,
+#shashi-chenglingji-tab:checked ~ .tab.shashi-chenglingji-tab-content,
+#shashi-chenglingji-tab-3d:checked ~ .tab.shashi-chenglingji-tab-3d-content,
+#shashi-chenglingji-tab-24h:checked ~ .tab.shashi-chenglingji-tab-24h-content
+{
+    display: block;
+}
+input + label {
+    border: 1px solid #999;
+    background: #EEE;
+    padding: 4px 12px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    top: 1px;
+}
+input:checked + label {
+    background: white;
+    border-bottom: 1px solid transparent;
+}
+input ~ .tab {
+    border-top: 1px solid #999;
+    padding: 12px;
+}

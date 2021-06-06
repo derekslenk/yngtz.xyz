@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Three Gorges Dam Monitoring</title>
+    <meta http-equiv="refresh" content="3600">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noarchive,snippet,index,follow">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Yangtze River monitoring</h1>
+    <!-- <h2>LIVE STREAMS <img src="cinema_1f3a6.png" alt="Cinema emoji" style="height: 0.9em;">: <a href="video2.html">side angle</a> and <a href="video.html">spillway angle</a></h2> -->
+    <!-- <p>Bonus stream: <a href="video3.html">Wuhan</a></p> -->
+    <p>Also available: <a href="source/dataset">raw water monitoring data</a>. You can also download it <a href="source/dataset.tar.xz">as a single <code>tar.xz</code> archive</a>.</p>
+    <p><a href="stations-map-downscaled.png">Water monitoring stations map</a> (<a href="https://piahs.copernicus.org/articles/379/421/2018/">source</a>; <a href="stations-map.png">original size</a>)</p>
+    <p>Weather report: <a href="https://www.ventusky.com/?p=30.9;115.3;5&amp;l=rain-3h">Ventusky</a>, <a href="https://www.windy.com/30.824/111.004?gfs,rain,30.582,110.973,9">Windy</a>.</p>
+    <p><iframe width="900" height="450"
+      src="https://embed.windy.com/embed2.html?lat=29.841&lon=109.863&detailLat=31.896&detailLon=110.742&width=900&height=450&zoom=6&level=surface&overlay=radar&product=radar&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-6"
+      frameborder="0"></iframe></p>
+    <h2>Three Gorges Dam (三峡水库)</h2>
+    <div id="three-gorges">
+      <input type="radio" name="three-gorges-tabs" id="three-gorges-tab" checked/>
+      <label for="three-gorges-tab">All time</label>
+      <input type="radio" name="three-gorges-tabs" id="three-gorges-tab-3d"/>
+      <label for="three-gorges-tab-3d">Last 3 days</label>
+      <input type="radio" name="three-gorges-tabs" id="three-gorges-tab-24h"/>
+      <label for="three-gorges-tab-24h">Last 24 hours</label>
+      <div class="tab three-gorges-tab-content">
+        <img src="three-gorges.png" alt="Water level and flow at Three Gorges Dam, all monitoring period">
+      </div>
+      <div class="tab three-gorges-tab-3d-content">
+        <img src="three-gorges-3d.png" alt="Water level and flow at Three Gorges Dam, last 3 days">
+      </div>
+      <div class="tab three-gorges-tab-24h-content">
+        <img src="three-gorges-24h.png" alt="Water level and flow at Three Gorges Dam, last 24 hours">
+      </div>
+    </div>
+    <p>
+     The normal water level of the reservoir is 175m with a corresponding storage of 3.93 &times; 10<sup>10</sup> m<sup>3</sup>.
+     The limiting level during flood season is 145m, with a flood control storage of 2.215 &times; 10<sup>10</sup> m<sup>3</sup>.
+    </p>
+    <h2>Upstream: Cuntan/Chongqing (寸滩)</h2>
+    <div id="cuntan">
+      <input type="radio" name="cuntan-tabs" id="cuntan-tab" checked/>
+      <label for="cuntan-tab">All time</label>
+      <input type="radio" name="cuntan-tabs" id="cuntan-tab-3d"/>
+      <label for="cuntan-tab-3d">Last 3 days</label>
+      <input type="radio" name="cuntan-tabs" id="cuntan-tab-24h"/>
+      <label for="cuntan-tab-24h">Last 24 hours</label>
+      <div class="tab cuntan-tab-content">
+        <img src="cuntan.png" alt="Water level and flow at Cuntan/Chongqing (upstream), all monitoring period">
+      </div>
+      <div class="tab cuntan-tab-3d-content">
+        <img src="cuntan-3d.png" alt="Water level and flow at Cuntan/Chongqing (upstream), last 3 days">
+      </div>
+      <div class="tab cuntan-tab-24h-content">
+        <img src="cuntan-24h.png" alt="Water level and flow at Cuntan/Chongqing (upstream), last 24 hours">
+      </div>
+    </div>
+    <p>We are also plotting Wulong River tributary. It is downstream from Cuntan but might contribute an additional amount of during storms.</p>
+    <h2>Downstream: Hankou/Wuhan (汉口)</h2>
+    <div id="hankou">
+      <input type="radio" name="hankou-tabs" id="hankou-tab" checked/>
+      <label for="hankou-tab">All time</label>
+      <input type="radio" name="hankou-tabs" id="hankou-tab-3d"/>
+      <label for="hankou-tab-3d">Last 3 days</label>
+      <input type="radio" name="hankou-tabs" id="hankou-tab-24h"/>
+      <label for="hankou-tab-24h">Last 24 hours</label>
+      <div class="tab hankou-tab-content">
+        <img src="hankou.png" alt="Water level and flow at Hankou/Wuhan (downstream), all monitoring period">
+      </div>
+      <div class="tab hankou-tab-3d-content">
+        <img src="hankou-3d.png" alt="Water level and flow at Hankou/Wuhan (downstream), last 3 days">
+      </div>
+      <div class="tab hankou-tab-24h-content">
+        <img src="hankou-24h.png" alt="Water level and flow at Hankou/Wuhan (downstream), last 24 hours">
+      </div>
+    </div>
+    <h2>Downstream: Shashi (沙市)/Chenglingji (城陵矶(七))</h2>
+    <div id="shashi-chenglingji">
+      <input type="radio" name="shashi-chenglingji-tabs" id="shashi-chenglingji-tab" checked/>
+      <label for="shashi-chenglingji-tab">All time</label>
+      <input type="radio" name="shashi-chenglingji-tabs" id="shashi-chenglingji-tab-3d"/>
+      <label for="shashi-chenglingji-tab-3d">Last 3 days</label>
+      <input type="radio" name="shashi-chenglingji-tabs" id="shashi-chenglingji-tab-24h"/>
+      <label for="shashi-chenglingji-tab-24h">Last 24 hours</label>
+      <div class="tab shashi-chenglingji-tab-content">
+        <img src="shashi-chenglingji.png" alt="Water level and flow at Shashi-Chenglingji/Wuhan (downstream), all monitoring period">
+      </div>
+      <div class="tab shashi-chenglingji-tab-3d-content">
+        <img src="shashi-chenglingji-3d.png" alt="Water level and flow at Shashi-Chenglingji/Wuhan (downstream), last 3 days">
+      </div>
+      <div class="tab shashi-chenglingji-tab-24h-content">
+        <img src="shashi-chenglingji-24h.png" alt="Water level and flow at Shashi-Chenglingji/Wuhan (downstream), last 24 hours">
+      </div>
+    </div>
+    <p>
+      This graph should represent what will eventually hit Hankou/Wuhan further downstream (if the numbers were real). Chenglingji should be what Dongting Lake system is dumping back into the Yangtze.
+    </p>
+    <h2>Downstream: Yichang (宜昌)</h2>
+    <div id="yichang">
+      <input type="radio" name="yichang-tabs" id="yichang-tab" checked/>
+      <label for="yichang-tab">All time</label>
+      <input type="radio" name="yichang-tabs" id="yichang-tab-3d"/>
+      <label for="yichang-tab-3d">Last 3 days</label>
+      <input type="radio" name="yichang-tabs" id="yichang-tab-24h"/>
+      <label for="yichang-tab-24h">Last 24 hours</label>
+      <div class="tab yichang-tab-content">
+        <img src="yichang.png" alt="Water level and flow at Yichang (downstream), all monitoring period">
+      </div>
+      <div class="tab yichang-tab-3d-content">
+        <img src="yichang-3d.png" alt="Water level and flow at Yichang (downstream), last 3 days">
+      </div>
+      <div class="tab yichang-tab-24h-content">
+        <img src="yichang-24h.png" alt="Water level and flow at Yichang (downstream), last 24 hours">
+      </div>
+    </div>
+    <h2>Q&A</h2>
+    <p>
+      Q: This isn't the original...what happened?<br>
+      A: The OG has been taken down, but has published code. See <a href="https://web.archive.org/web/20210427051633/3gd.mooo.com/">the final snapshot on archive.org</a>
+    </p>
+    <p>
+      Q: How did you generate the graphs?<br>
+      A: We started monitoring Yangtze River Water Resources Commission's website on Sunday, July 19. Our scripts fetch the <a href="http://www.cjh.com.cn/swyb_sssq.html">real-time water level monitoring page</a> every 5 minutes, and update the above graphs.
+    </p>
+    <p>
+      Q: Why is inflow shown as separate points? The water level and outflow are shown as continuous lines.<br>
+      A: This is a problem with the underlying data source: on most captures "入" (inflow) is reported as "-". We assume that estimating and updating inflow requires manual steps, hence the irregular updates. Previously inflow was reported once every 6 hours but since July 26 it has been reported once every 2 hours (outflow and water level updates are once an hour).
+      The inflow curve appears to be basically the measurement at Cuntan, due to the length of the reservoir, minus runoff and tributaries downriver.
+    </p>
+    <p>
+      Q: The numbers look suspect!<br>
+      A: We agree. On multiple occasions inflow &lt; outflow yet the water level is going up. As one anon said, "CCP might just have the real data, and then decide by committee what levels they want to share, and then get the water system operator to tell them how far is too far." We can't argue with that. But the trend lines are potentially indicative and it is important to archive the official data for posterity.
+    </p>
+    <p>
+      Q: Can you add data for beginning of July?<br>
+      A: Unfortunately, no as we don't have data for before July 19. (It is our plan to import the data from <a href="https://journal.probeinternational.org/reservoir-level-3/">Three Gorges Reservoir Watch</a> eventually. We have not gotten around to it yet. Their data points have different -- once daily -- granularity, though.)
+    </p>
+    <p>
+      Q: Is your data set/plotting scripts public? Can I re-post your graphs?<br>
+      A: Absolutely, and please do! You can download the web page captures and our gnuplot workflow <a href="source/">here</a>. Some anons have been using our data set to plot predictions in this <a href="https://docs.google.com/spreadsheets/d/1twaIgycg1wpfIs8mJt5U-0fgEWYWfqL83qEqnWweZVE/edit">Google Sheet</a> -- thank you!
+    </p>
+    <p>
+      Q: Why is this important? Where can I find out more?<br>
+      A: Start with this <a href="https://twitter.com/man_integrated/status/1287836332883050498">Twitter thread</a>. <a href="https://twitter.com/public_juan">@public_juan</a>'s and <a href="https://twitter.com/PavewayIV">@PavewayIV</a>'s Twitter accounts have excellent reporting. <code>/tgdg/</code> threads on 4chan's <code>/pol/</code> are not for the faint of heart but harness the power of many anons (<a href="https://boards.4chan.org/pol/catalog#s=/tgdg/">catalog</a> link and <a href="javascript:(()=>{fetch('https://cors-anywhere.herokuapp.com/https://a.4cdn.org/pol/catalog.json').then(a=>{a.json().then(b=>{b.forEach(c=>{c.threads.filter(d=>d.sub).forEach(d=>{d.sub.toLowerCase().includes('/tgdg/')&&(window.location=`https://boards.4chan.org/pol/thread/${d.no}`)})})})})})();">/tgdg/</a> bookmarklet.) There are also threads on <a href="https://kiwifarms.net/threads/china-floodwatch-2020.73397/">KiwiFarms</a>, <a href="https://www.timebomb2000.com/xf/index.php?threads/chinas-three-gorge-dam-in-danger.577644/">TB2K</a>, <a href="http://www.freerepublic.com/focus/chat/3858449/posts?page=1">Free Republic</a>, and even <a href="https://www.godlikeproductions.com/forum1/message4434919/pg1">GLP</a>.<br>
+      You should also check out this short (~4.5 min) video on <a href="https://www.youtube.com/watch?v=zWVYJ_53dRA">Cavitation &amp; the Glen Canyon Dam</a>, and Association of State Dam Safety Officials page on <a href="https://www.damsafety.org/dam-failures">dam failures</a><br>
+      There is also an open-access technical paper detailing the construction of the dam: <a href="https://www.sciencedirect.com/science/article/pii/S2095809916311687
+">Key Technologies of the Hydraulic Structures of the Three Gorges Project</a>.
+    </p>
+    <p>
+      Q: Are there live streams?<br>
+      A: Yes. YouTube: <!-- <a href="https://www.youtube.com/watch?v=Fhddcv7p2QM">here</a> or --> <a href="https://www.youtube.com/user/ChinaTimes/featured">here</a>. HLS streams: <a href="http://3gd.mooo.com/video.html">here</a> and <a href="http://3gd.mooo.com/video2.html">here</a> (mirrors <a href="https://m.yangshipin.cn/video?type=2&pid=600040613&ptag=4_1.0.5.15187_copy">this</a>). Twitch: <a href="https://www.twitch.tv/tgdfloodwatch">here</a>. There is also a <a href="https://www.youtube.com/watch?v=u2kE7m-cbm8">multi-stream</a>.
+    </p>
+    <p>
+      Q: Are there data streams from Hankou/Wuhan, which is downstream of the dam?<br>
+      A: TomTom publishes <a href="https://www.tomtom.com/en_gb/traffic-index/wuhan-traffic/">live traffic report</a> from Wuhan.
+    </p>
+    <p>
+      Q: Why did the Wuhan/Hankou graph change? It previously looked <a href="hankou-prev.png">like this</a>.<br>
+      A: We believe that <a href="source/dataset/2020-07-18-193234-1595115154.html">July 19 08:00 (GMT+8) data point</a> was in error (42.57m water level; all other data points for the week are ~28m) so have removed it. It was probably a manual data entry error.
+    </p>
+    <p>
+      And remember, friends, <a href="checked0.png">&gt;&gt;177777777</a>, <a href="checked.png">&gt;&gt;269999999</a>, <a href="checked2.png">&gt;&gt;277777777</a>.
+    </p>
+  </body>
+</html>
